@@ -1,4 +1,4 @@
-from hashlib import sha256
+from generate_nonce import generate_nonce
 
 block_count = int(input())
 concat_transaction = ""
@@ -13,13 +13,7 @@ for i in range(block_count):
 
     Z,D = map(int,input().split())
 
-    while True:
-        hash_str = sha256((concat_transaction+str(nonce)).encode('utf-8')).hexdigest()
-
-        if hash_str.startswith(Z*"0") and sum(ord(char) for char in hash_str) % D == 0:
-            break
-
-        nonce += 1
+    nonce,hash_str = generate_nonce(Z,D,concat_transaction)
 
     print(f"Valid Nonce: {nonce}")
     print(f"Hash: {hash_str}")

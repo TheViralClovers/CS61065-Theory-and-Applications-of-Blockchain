@@ -22,7 +22,7 @@ with open('input.txt', 'r') as file:
         
         merkle_root = build_merkle_tree(transactions).root
         current_block = Block(prev_block_hash, merkle_root, transactions)
-        current_block_header_hash = current_block.hash.hexdigest()
+        current_block_header_hash = current_block.hash
 
         public_key = eval(file.readline())
         private_key = eval(file.readline())
@@ -35,5 +35,9 @@ with open('input.txt', 'r') as file:
 
         else:
             print("Invalid")
+
+        
+        print(f'Nonce: {current_block.nonce}')
+        print(f'Blockheader Hash: {current_block_header_hash}')
 
         prev_block_hash = current_block_header_hash
