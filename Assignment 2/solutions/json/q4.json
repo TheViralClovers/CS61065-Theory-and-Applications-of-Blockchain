@@ -1,6 +1,6 @@
 {
 	"jsonrpc": "2.0",
-	"method": "eth_getBlockByNumber",
-	"params": ["0x08c104b61dd62ba812872c34926f6d3f397e1838223c4dd7b378d2a7338203e7", false],
+	"method": "eth_getBlockByHash",
+	"params": ["0x2625246aeea62714b5b4bea37a492081fcfb37e20d953014224e4bc9e21b5b2b", false],
 	"id": 1
 }

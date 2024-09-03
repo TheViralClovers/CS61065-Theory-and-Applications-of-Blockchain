@@ -7,11 +7,11 @@ let totalDifficulty, blockNumber, parentHash, root;
 
 const fetchData = async () => {
 	await axios.post(url, data).then((response) => {
-        totalDifficulty = response.data.difficulty
-        blockNumber = response.data.number
-        parentHash = response.data.parentHash
-        root = response.data.stateRoot
-        console.log(response)
+        totalDifficulty = response.data.result.difficulty
+        blockNumber = parseInt(response.data.result.number,16)
+        parentHash = response.data.result.parentHash
+        root = response.data.result.stateRoot
+        console.log(response.data)
 	});
 	return [totalDifficulty,blockNumber,parentHash,root];
 };

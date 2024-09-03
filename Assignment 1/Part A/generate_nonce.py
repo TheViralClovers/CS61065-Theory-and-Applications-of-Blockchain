@@ -1,6 +1,7 @@
 from hashlib import sha256
 
 def generate_nonce(Z, D, transactions):
+    '''hello'''
     nonce = 0
 
     while True:
@@ -11,5 +12,4 @@ def generate_nonce(Z, D, transactions):
             break
 
         nonce += 1
-    
     return (nonce,hash_str)
